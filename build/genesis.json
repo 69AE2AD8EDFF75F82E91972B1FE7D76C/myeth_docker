@@ -1,0 +1,16 @@
+{
+	"config": {
+		"chainId": 666,
+		"homesteadBlock": 0,
+		"eip155Block": 0,
+		"eip158Block": 0
+	},
+	"nonce": "0x0000000000220042",
+	"timestamp": "0x0",
+	"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"gasLimit": "0x80000000000",
+	"difficulty": "0x0",	
+	"coinbase": "0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6",
+	"alloc":{
+	}
+}
