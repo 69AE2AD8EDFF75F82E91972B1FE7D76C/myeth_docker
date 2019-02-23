@@ -52,11 +52,11 @@
   - `INFO [02-23|11:57:56.631] Successfully sealed new block            number=1 sealhash=a6861e…3096e9 hash=ef3c77…20a29a elapsed=6m2.027s`
   - `INFO [02-23|11:57:56.631] 🔨 mined potential block                  number=1 hash=ef3c77…20a29a`
   - `INFO [02-23|11:57:56.632] Commit new mining work                   number=2 sealhash=3cf71d…11cecb uncles=0 txs=0 gas=0 fees=0 elapsed=178.1µs`
-- now mining is started and new blocks are commited to blockchain
+- now mining has been started and new blocks are commited to blockchain
 - In geth JS console run:
-  - `eth.getBalance(eth.coinbase)` should return some ETH in WEI `535000000000000000000`
-  - `personal.unlockAccount("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "123", 15000)` will unlock coinbase account and give a chance to sent ETH to another account
-  - `eth.sendTransaction({from:"0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", to: "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47",value: "5000000000000000000", gasPrice:20 , gas: 21000})` will send 5 ETH to second account. As a result hash of created transaction `"0x60633ac673895b0bd4ec10737df7d7ef5f1f6ca98321331d791bb18290297f2f"`
-  - if mining is `off` transaction will wait in `txpool.content` in pending section to be mined
+  - `eth.getBalance(eth.coinbase)` to return account balance in WEI `535000000000000000000`
+  - `personal.unlockAccount("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "123", 15000)` to unlock coinbase account and give a chance to send ETH to another account
+  - `eth.sendTransaction({from:"0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", to: "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47",value: "5000000000000000000", gasPrice:20 , gas: 21000})` to send 5 ETH to second account. As a result hash of newly created transaction `"0x60633ac673895b0bd4ec10737df7d7ef5f1f6ca98321331d791bb18290297f2f"`
+  - if mining is `off` transaction will wait to be mined in `txpool.content` at pending section
   - after mining started again `txpool.content` should be empty
   - if `txpool` is empty transaction is commited to blockchain and second account balance `eth.getBalance("0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47")` should be 5 ETH in WEI `5000000000000000000`
