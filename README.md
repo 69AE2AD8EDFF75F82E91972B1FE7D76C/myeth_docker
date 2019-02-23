@@ -68,19 +68,24 @@
   - `miner.stop()` to stop mining. Result `null`
 - when mining is started first time, geth must generate DAG file (2GB in ~/.ethash/ directory). This will take a while. Geth output should look like:
   ```log
-  INFO [02-23|11:51:59.099] Generating DAG in progress               epoch=0 percentage=0 elapsed=3.499s
-  INFO [02-23|11:52:02.502] Generating DAG in progress               epoch=0 percentage=1 elapsed=6.902s
-  INFO [02-23|11:52:06.154] Generating DAG in progress               epoch=0 percentage=2 elapsed=10.553s
+  INFO [02-23|13:44:46.632] Generating DAG in progress               epoch=0 percentage=0 elapsed=2.078s
+  INFO [02-23|13:44:48.607] Generating DAG in progress               epoch=0 percentage=1 elapsed=4.053s
+  INFO [02-23|13:44:50.647] Generating DAG in progress               epoch=0 percentage=2 elapsed=6.093s
   ...
-  INFO [02-23|11:55:09.002] Generating DAG in progress               epoch=0 percentage=50 elapsed=3m13.401s
-  INFO [02-23|11:55:12.591] Generating DAG in progress               epoch=0 percentage=51 elapsed=3m16.991s
+  INFO [02-23|13:46:30.299] Generating DAG in progress               epoch=0 percentage=49 elapsed=1m45.745s
+  INFO [02-23|13:46:32.335] Generating DAG in progress               epoch=0 percentage=50 elapsed=1m47.781s
+  INFO [02-23|13:46:34.401] Generating DAG in progress               epoch=0 percentage=51 elapsed=1m49.847s
   ...
-  INFO [02-23|11:57:54.374] Generating DAG in progress               epoch=0 percentage=98 elapsed=5m58.774s
-  INFO [02-23|11:57:56.412] Generating DAG in progress               epoch=0 percentage=99 elapsed=6m0.811s
-  INFO [02-23|11:57:56.415] Generated ethash verification cache      epoch=0 elapsed=6m0.815s
-  INFO [02-23|11:57:56.631] Successfully sealed new block            number=1 sealhash=a6861e…3096e9 hash=ef3c77…20a29a elapsed=6m2.027s
-  INFO [02-23|11:57:56.631] 🔨 mined potential block                  number=1 hash=ef3c77…20a29a
-  INFO [02-23|11:57:56.632] Commit new mining work                   number=2 sealhash=3cf71d…11cecb uncles=0 txs=0 gas=0 fees=0 elapsed=178.1µs
+  INFO [02-23|13:48:00.295] Generating DAG in progress               epoch=0 percentage=92 elapsed=3m15.741s
+  INFO [02-23|13:48:12.443] Generating DAG in progress               epoch=0 percentage=98 elapsed=3m27.890s
+  INFO [02-23|13:48:14.524] Generating DAG in progress               epoch=0 percentage=99 elapsed=3m29.970s
+  INFO [02-23|13:48:14.527] Generated ethash verification cache      epoch=0 elapsed=3m29.974s
+  INFO [02-23|13:48:18.447] Generating DAG in progress               epoch=1 percentage=0  elapsed=3.280s
+  INFO [02-23|13:48:19.305] Successfully sealed new block            number=1 sealhash=44d23c…70a2f5 hash=fba12f…74bbbf elapsed=3m35.327s
+  INFO [02-23|13:48:19.305] 🔨 mined potential block                  number=1 hash=fba12f…74bbbf
+  INFO [02-23|13:48:19.318] Commit new mining work                   number=2 sealhash=64a28a…ecd78c uncles=0 txs=0 gas=0 fees=0 elapsed=99.8µs
+  INFO [02-23|13:48:20.223] Successfully sealed new block            number=2 sealhash=64a28a…ecd78c hash=9613bb…0fd318 elapsed=904.680ms
+  INFO [02-23|13:48:20.223] 🔨 mined potential block                  number=2 hash=9613bb…0fd318
   ```
 - now mining has been started and new blocks are commited to blockchain
 - In geth JS console run:
