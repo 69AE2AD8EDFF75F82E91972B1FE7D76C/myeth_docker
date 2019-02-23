@@ -7,7 +7,7 @@
   - `docker exec -it myeth bash` to attach to running container
   
 ### 2. Run ethereum
-- After last command you are in docker container.  To run ethereum private blockchain few more steps are requiered.
+- In docker container run ethereum private blockchai:
   - `geth --datadir /eth/gethData init /eth/genesis.json`  to initialize blockchain from prepared genesis file
   ```log
   INFO [02-23|13:33:40.683] Maximum peer count                       ETH=25 LES=0 total=25
