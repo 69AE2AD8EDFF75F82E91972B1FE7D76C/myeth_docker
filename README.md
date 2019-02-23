@@ -58,9 +58,10 @@
     ```    
 ### 4. Enjoy
 - In geth JS console run:
-  - `eth.accounts` to display predefined accounts. Password for both is **`123`**
-    - `["0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47"]`
-      - First account is defined as a coinbase and all mined ETH will go to this account
+  - `eth.accounts` to display predefined accounts. Password for both is **`123`**. First account is defined as a coinbase and all mined ETH will go to this account.
+  ```log
+  ["0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47"]
+  ```
   - `eth.getBalance("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6")` to display account balace. Should be `0`
   - `eth.mining` to display mining status. Result `false`
   - `miner.start(1)` to start mining with 1 thread. Result `null`
