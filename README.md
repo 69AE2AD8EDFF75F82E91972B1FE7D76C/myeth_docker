@@ -65,7 +65,6 @@
   - `eth.getBalance("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6")` to display account balace. Should be `0`
   - `eth.mining` to display mining status. Result `false`
   - `miner.start(1)` to start mining with 1 thread. Result `null`
-  - `miner.stop()` to stop mining. Result `null`
 - when mining is started first time, geth must generate DAG file (2GB in ~/.ethash/ directory). This will take a while. Geth output should look like:
   ```log
   INFO [02-23|13:44:46.632] Generating DAG in progress               epoch=0 percentage=0 elapsed=2.078s
@@ -88,6 +87,7 @@
   INFO [02-23|13:48:20.223] 🔨 mined potential block                  number=2 hash=9613bb…0fd318
   ```
 - now mining has been started and new blocks are commited to blockchain
+- when DAG was generated and few blocks sealed run `miner.stop()` to stop mining. Result `null`
 - In geth JS console run:
   - `eth.getBalance(eth.coinbase)` to return account balance in WEI `535000000000000000000`
   - `personal.unlockAccount("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "123", 15000)` to unlock coinbase account and give a chance to send ETH to another account
@@ -118,7 +118,8 @@
     queued: {}
   }
   ```
-  - after mining started again `txpool.content` should be empty
+  - after mining started `miner.start(1)`
+  - `txpool.content` should be empty (it can take few seconds)
   ```log
   {
     pending: {},
