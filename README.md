@@ -119,4 +119,10 @@
   }
   ```
   - after mining started again `txpool.content` should be empty
-  - if `txpool` is empty transaction is commited to blockchain and second account balance `eth.getBalance("0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47")` should be 5 ETH in WEI `5000000000000000000`
+  ```log
+  {
+    pending: {},
+    queued: {}
+  }
+  ```
+  - if `txpool` is empty transaction was commited to blockchain and second account balance `eth.getBalance("0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47")` should be 5 ETH in WEI `5000000000000000000`
