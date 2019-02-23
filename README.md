@@ -93,5 +93,30 @@
   - `personal.unlockAccount("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "123", 15000)` to unlock coinbase account and give a chance to send ETH to another account
   - `eth.sendTransaction({from:"0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", to: "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47",value: "5000000000000000000", gasPrice:20 , gas: 21000})` to send 5 ETH to second account. As a result hash of newly created transaction `"0x60633ac673895b0bd4ec10737df7d7ef5f1f6ca98321331d791bb18290297f2f"`
   - if mining is `off` transaction will wait to be mined in `txpool.content` at pending section
+  ```log
+  {
+    pending: {
+      0x5C0295daF207c7bBdEF07f1C77e9aCB346f0e6D6: {
+        0: {
+          blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+          blockNumber: null,
+          from: "0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6",
+          gas: "0x5208",
+          gasPrice: "0x14",
+          hash: "0x60633ac673895b0bd4ec10737df7d7ef5f1f6ca98321331d791bb18290297f2f",
+          input: "0x",
+          nonce: "0x0",
+          r: "0x88f9caf9aeea6391704f7ce6ff6046005124d940fc8203f43440f704ae4b0a19",
+          s: "0x2395d3c1fb4a28ef54ee6e130a0cccc59101d9c75b8d28799efd1784a0bed350",
+          to: "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47",
+          transactionIndex: "0x0",
+          v: "0x557",
+          value: "0x4563918244f40000"
+        }
+      }
+    },
+    queued: {}
+  }
+  ```
   - after mining started again `txpool.content` should be empty
   - if `txpool` is empty transaction is commited to blockchain and second account balance `eth.getBalance("0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47")` should be 5 ETH in WEI `5000000000000000000`
