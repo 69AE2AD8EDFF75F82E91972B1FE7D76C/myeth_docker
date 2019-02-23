@@ -9,13 +9,37 @@
 ### 2. Run ethereum
 - After last command you are in docker container.  To run ethereum private blockchain few more steps are requiered.
   - `geth --datadir /eth/gethData init /eth/genesis.json`  to initialize blockchain from prepared genesis file
+  ```log
+  INFO [02-23|13:33:40.683] Maximum peer count                       ETH=25 LES=0 total=25
+  INFO [02-23|13:33:40.683] Allocated cache and file handles         database=/eth/gethData/geth/chaindata cache=16.00MiB handles=16
+  INFO [02-23|13:33:40.700] Writing custom genesis block
+  INFO [02-23|13:33:40.700] Persisted trie from memory database      nodes=0 size=0.00B time=3.8µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+  INFO [02-23|13:33:40.701] Successfully wrote genesis state         database=chaindata                    hash=3c53c8…98ff2b
+  INFO [02-23|13:33:40.701] Allocated cache and file handles         database=/eth/gethData/geth/lightchaindata cache=16.00MiB handles=16
+  INFO [02-23|13:33:40.714] Writing custom genesis block
+  INFO [02-23|13:33:40.714] Persisted trie from memory database      nodes=0 size=0.00B time=4.4µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+  INFO [02-23|13:33:40.715] Successfully wrote genesis state         database=lightchaindata                    hash=3c53c8…98ff2b
+  ```
   - `geth --datadir /eth/gethData --networkid 666 --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*" --nodiscover` to **#RUN ETHEREUM**
 - Now this console will display output from geth:
   ```log
-  INFO [02-23|11:23:57.034] New local node record                    seq=2 id=387479d51019b70b ip=127.0.0.1 udp=0 tcp=30303
-  INFO [02-23|11:23:57.034] Started P2P networking                   self="enode://bfc64d8d464e3e4627e2d7a816412359f14b49f0c3432611cdccd146a8353203541ad1823555da1235ec08a8e2ce73f4001be30a4190a505df34a3711eb3453f@127.0.0.1:30303?discport=0"
-  INFO [02-23|11:23:57.037] IPC endpoint opened                      url=/eth/gethData/geth.ipc
-  INFO [02-23|11:23:57.038] HTTP endpoint opened                     url=http://0.0.0.0:8545    cors=* vhosts=localhost
+  INFO [02-23|13:33:48.712] Maximum peer count                       ETH=25 LES=0 total=25
+  INFO [02-23|13:33:48.713] Starting peer-to-peer node               instance=Geth/v1.9.0-unstable-5b8ae788/linux-amd64/go1.9.3
+  INFO [02-23|13:33:48.713] Allocated trie memory caches             clean=256.00MiB dirty=256.00MiB
+  INFO [02-23|13:33:48.713] Allocated cache and file handles         database=/eth/gethData/geth/chaindata cache=512.00MiB handles=524288
+  INFO [02-23|13:33:48.747] Initialised chain configuration          config="{ChainID: 666 Homestead: 0 DAO: <nil> DAOSupport: false EIP150: <nil> EIP155: 0 EIP158: 0 Byzantium: <nil> Constantinople: <nil>  ConstantinopleFix: <nil> Engine: unknown}"
+  INFO [02-23|13:33:48.747] Disk storage enabled for ethash caches   dir=/eth/gethData/geth/ethash count=3
+  INFO [02-23|13:33:48.747] Disk storage enabled for ethash DAGs     dir=/root/.ethash             count=2
+  INFO [02-23|13:33:48.747] Initialising Ethereum protocol           versions="[63 62]" network=666
+  INFO [02-23|13:33:48.800] Loaded most recent local header          number=0 hash=3c53c8…98ff2b td=0 age=49y10mo1w
+  INFO [02-23|13:33:48.800] Loaded most recent local full block      number=0 hash=3c53c8…98ff2b td=0 age=49y10mo1w
+  INFO [02-23|13:33:48.800] Loaded most recent local fast block      number=0 hash=3c53c8…98ff2b td=0 age=49y10mo1w
+  INFO [02-23|13:33:48.801] Regenerated local transaction journal    transactions=0 accounts=0
+  INFO [02-23|13:33:48.818] New local node record                    seq=1 id=ec175f130ff83e09 ip=127.0.0.1 udp=0 tcp=30303
+  INFO [02-23|13:33:48.818] Started P2P networking                   self="enode://c36011f01125415f189119936c651551e7927159d364159c84e0886e83b18efb0e7dd0736d8305e164e34bc12c02805680a632440ecf6bae0a8ae729471703f2@127.0.0.1:30303?discport=0"
+  INFO [02-23|13:33:48.819] IPC endpoint opened                      url=/eth/gethData/geth.ipc
+  INFO [02-23|13:33:48.819] HTTP endpoint opened                     url=http://0.0.0.0:8545    cors=* vhosts=localhost
+  INFO [02-23|13:34:29.327] Etherbase automatically configured       address=0x5C0295daF207c7bBdEF07f1C77e9aCB346f0e6D6
   ```
 - To stop geth use `Ctrl+C`. To run again from this point, use **#RUN ETHEREUM** command once again.
   
