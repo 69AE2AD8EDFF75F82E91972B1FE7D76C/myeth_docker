@@ -1,4 +1,4 @@
-# Docker file with swarm and private ethereum network with fixed difficulty set to 100000.
+# Docker file with `Swarm` and `Geth` with fixed difficulty set to 100000.
 
 ### 1. Build docker
 - First build docker container. In main directory run:
