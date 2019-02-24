@@ -90,7 +90,7 @@
 - when DAG was generated and few blocks sealed run `miner.stop()` to stop mining. Result `null`
 - In geth JS console run:
   - `eth.getBalance(eth.coinbase)` to return account balance in WEI `535000000000000000000`
-  - `personal.unlockAccount("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "123", 15000)` to unlock coinbase account and give a chance to send ETH to another account
+  - `personal.unlockAccount("0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", "123", 15000)` to unlock coinbase account (timelimit in seconds) and give a chance to send ETH to another account
   - `eth.sendTransaction({from:"0x5c0295daf207c7bbdef07f1c77e9acb346f0e6d6", to: "0xaa9fac0d862c09dddd3ab53001fd72d50c0f7c47",value: "5000000000000000000", gasPrice:20 , gas: 21000})` to send 5 ETH to second account. As a result hash of newly created transaction `"0x60633ac673895b0bd4ec10737df7d7ef5f1f6ca98321331d791bb18290297f2f"`
   - if mining is `off` transaction will wait to be mined in `txpool.content` at pending section
   ```log
