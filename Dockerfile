@@ -8,13 +8,15 @@ RUN echo "Essentials"
 RUN apt-get install -y build-essential
 RUN apt-get install -y git
 
-RUN apt-get install software-properties-common -y
-RUN add-apt-repository -y ppa:ethereum/ethereum -y
 RUN apt-get install net-tools
 
 RUN apt-get install vim -y
 RUN apt-get install curl -y
 RUN apt-get install wget -y
+
+RUN apt-get install software-properties-common -y
+RUN add-apt-repository -y ppa:ethereum/ethereum -y
+RUN apt-get update -y
 
 RUN echo "Install Swarm"
 RUN apt-get install ethereum-swarm -y
