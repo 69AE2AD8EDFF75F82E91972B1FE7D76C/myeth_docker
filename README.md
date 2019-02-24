@@ -20,7 +20,7 @@
   INFO [02-23|13:33:40.714] Persisted trie from memory database      nodes=0 size=0.00B time=4.4µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
   INFO [02-23|13:33:40.715] Successfully wrote genesis state         database=lightchaindata                    hash=3c53c8…98ff2b
   ```
-  - `geth --datadir /eth/gethData --networkid 666 --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*" --nodiscover` to **#RUN ETHEREUM**
+  - `geth --datadir /eth/gethData --networkid 666 --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*" --ws --wsaddr "0.0.0.0" --wsorigins "*" --shh --nodiscover` to **#RUN ETHEREUM**
 - Now this console will display output from geth:
   ```log
   INFO [02-23|13:33:48.712] Maximum peer count                       ETH=25 LES=0 total=25
