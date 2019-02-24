@@ -4,24 +4,29 @@ services:
     build: .
     container_name: myeth
     image: myeth-image
+    hostname: myeth
     ports:
-     - "8500:8500"
      - "8545:8545"
      - "8546:8546"
-     - "30303:30303"
     tty: true
     volumes:
      - ./build:/build
-#    - swarm-data:/
     networks:
     - eth-network
   
-#  goeth:
-#    build: build/go-ethereum/.
-#    container_name: go-eth
-#    image: go-eth-image
+  myeth1:
+    build: .
+    container_name: myeth1
+    image: myeth-image
+    hostname: myeth1
+    ports:
+     - "8645:8545"
+     - "8646:8546"
+    tty: true
+    volumes:
+     - ./build:/build
+    networks:
+    - eth-network
 networks:
   eth-network:
     driver: bridge
-#volumes:
-#    swarm-data:
